@@ -24,6 +24,30 @@ public class MeetingRooms {
         }
         return true;
     }
+
+    public static void main(String[] args) {
+        MeetingRooms solution = new MeetingRooms();
+        
+        // Test case 1: Overlapping meetings
+        int[][] intervals1 = {{0, 30}, {5, 10}, {15, 20}};
+        System.out.println("Test case 1: " + solution.canAttendMeetings(intervals1)); // Expected: false
+        
+        // Test case 2: Non-overlapping meetings
+        int[][] intervals2 = {{7, 10}, {2, 4}};
+        System.out.println("Test case 2: " + solution.canAttendMeetings(intervals2)); // Expected: true
+        
+        // Test case 3: Single meeting
+        int[][] intervals3 = {{1, 2}};
+        System.out.println("Test case 3: " + solution.canAttendMeetings(intervals3)); // Expected: true
+        
+        // Test case 4: Empty array
+        int[][] intervals4 = {};
+        System.out.println("Test case 4: " + solution.canAttendMeetings(intervals4)); // Expected: true
+        
+        // Test case 5: Back-to-back meetings
+        int[][] intervals5 = {{1, 2}, {2, 3}, {3, 4}};
+        System.out.println("Test case 5: " + solution.canAttendMeetings(intervals5)); // Expected: true
+    }
 }
 
 /*

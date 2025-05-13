@@ -45,6 +45,50 @@ public class MinimumWindowSubstring {
         }
         return minLen == Integer.MAX_VALUE ? "" : s.substring(minStart, minStart + minLen);
     }
+
+    public static void main(String[] args) {
+        MinimumWindowSubstring solution = new MinimumWindowSubstring();
+        
+        // Test case 1: Basic case
+        System.out.println("Test case 1:");
+        String s1 = "ADOBECODEBANC";
+        String t1 = "ABC";
+        System.out.println("Input: s = \"" + s1 + "\", t = \"" + t1 + "\"");
+        String result1 = solution.minWindow(s1, t1);
+        System.out.println("Output: \"" + result1 + "\""); // Expected: "BANC"
+        
+        // Test case 2: Single character
+        System.out.println("\nTest case 2:");
+        String s2 = "a";
+        String t2 = "a";
+        System.out.println("Input: s = \"" + s2 + "\", t = \"" + t2 + "\"");
+        String result2 = solution.minWindow(s2, t2);
+        System.out.println("Output: \"" + result2 + "\""); // Expected: "a"
+        
+        // Test case 3: No valid window
+        System.out.println("\nTest case 3:");
+        String s3 = "a";
+        String t3 = "aa";
+        System.out.println("Input: s = \"" + s3 + "\", t = \"" + t3 + "\"");
+        String result3 = solution.minWindow(s3, t3);
+        System.out.println("Output: \"" + result3 + "\""); // Expected: ""
+        
+        // Test case 4: Multiple occurrences
+        System.out.println("\nTest case 4:");
+        String s4 = "aab";
+        String t4 = "aab";
+        System.out.println("Input: s = \"" + s4 + "\", t = \"" + t4 + "\"");
+        String result4 = solution.minWindow(s4, t4);
+        System.out.println("Output: \"" + result4 + "\""); // Expected: "aab"
+        
+        // Test case 5: Longer string
+        System.out.println("\nTest case 5:");
+        String s5 = "cabwefgewcwaefgcf";
+        String t5 = "cae";
+        System.out.println("Input: s = \"" + s5 + "\", t = \"" + t5 + "\"");
+        String result5 = solution.minWindow(s5, t5);
+        System.out.println("Output: \"" + result5 + "\""); // Expected: "cwae"
+    }
 }
 
 /*

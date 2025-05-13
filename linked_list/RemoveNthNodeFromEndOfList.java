@@ -29,6 +29,88 @@ public class RemoveNthNodeFromEndOfList {
         second.next = second.next.next;
         return dummy.next;
     }
+
+    // Helper method to create a linked list from an array
+    private ListNode createList(int[] arr) {
+        if (arr == null || arr.length == 0) return null;
+        ListNode head = new ListNode(arr[0]);
+        ListNode curr = head;
+        for (int i = 1; i < arr.length; i++) {
+            curr.next = new ListNode(arr[i]);
+            curr = curr.next;
+        }
+        return head;
+    }
+
+    // Helper method to print a linked list
+    private void printList(ListNode head) {
+        if (head == null) {
+            System.out.println("[]");
+            return;
+        }
+        System.out.print("[");
+        ListNode curr = head;
+        while (curr != null) {
+            System.out.print(curr.val);
+            if (curr.next != null) System.out.print(",");
+            curr = curr.next;
+        }
+        System.out.println("]");
+    }
+
+    public static void main(String[] args) {
+        RemoveNthNodeFromEndOfList solution = new RemoveNthNodeFromEndOfList();
+        
+        // Test case 1: Remove second node from end
+        System.out.println("Test case 1:");
+        int[] arr1 = {1, 2, 3, 4, 5};
+        ListNode head1 = solution.createList(arr1);
+        System.out.print("Original list: ");
+        solution.printList(head1);
+        ListNode result1 = solution.removeNthFromEnd(head1, 2);
+        System.out.print("After removing 2nd node from end: ");
+        solution.printList(result1); // Expected: [1,2,3,5]
+        
+        // Test case 2: Remove last node
+        System.out.println("\nTest case 2:");
+        int[] arr2 = {1, 2};
+        ListNode head2 = solution.createList(arr2);
+        System.out.print("Original list: ");
+        solution.printList(head2);
+        ListNode result2 = solution.removeNthFromEnd(head2, 1);
+        System.out.print("After removing last node: ");
+        solution.printList(result2); // Expected: [1]
+        
+        // Test case 3: Remove only node
+        System.out.println("\nTest case 3:");
+        int[] arr3 = {1};
+        ListNode head3 = solution.createList(arr3);
+        System.out.print("Original list: ");
+        solution.printList(head3);
+        ListNode result3 = solution.removeNthFromEnd(head3, 1);
+        System.out.print("After removing only node: ");
+        solution.printList(result3); // Expected: []
+        
+        // Test case 4: Remove first node
+        System.out.println("\nTest case 4:");
+        int[] arr4 = {1, 2, 3, 4, 5};
+        ListNode head4 = solution.createList(arr4);
+        System.out.print("Original list: ");
+        solution.printList(head4);
+        ListNode result4 = solution.removeNthFromEnd(head4, 5);
+        System.out.print("After removing first node: ");
+        solution.printList(result4); // Expected: [2,3,4,5]
+        
+        // Test case 5: Longer list
+        System.out.println("\nTest case 5:");
+        int[] arr5 = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        ListNode head5 = solution.createList(arr5);
+        System.out.print("Original list: ");
+        solution.printList(head5);
+        ListNode result5 = solution.removeNthFromEnd(head5, 4);
+        System.out.print("After removing 4th node from end: ");
+        solution.printList(result5); // Expected: [1,2,3,4,5,7,8,9,10]
+    }
 }
 
 class ListNode {

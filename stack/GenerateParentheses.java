@@ -28,6 +28,30 @@ public class GenerateParentheses {
         if (open < max) backtrack(res, curr + "(", open + 1, close, max);
         if (close < open) backtrack(res, curr + ")", open, close + 1, max);
     }
+
+    public static void main(String[] args) {
+        GenerateParentheses solution = new GenerateParentheses();
+
+        // Test case 1: n = 3
+        int n1 = 3;
+        List<String> result1 = solution.generateParenthesis(n1);
+        System.out.println("Test case 1: " + result1); // Expected: ["((()))","(()())","(())()","()(())","()()()"]
+
+        // Test case 2: n = 1
+        int n2 = 1;
+        List<String> result2 = solution.generateParenthesis(n2);
+        System.out.println("Test case 2: " + result2); // Expected: ["()"]
+
+        // Test case 3: n = 0
+        int n3 = 0;
+        List<String> result3 = solution.generateParenthesis(n3);
+        System.out.println("Test case 3: " + result3); // Expected: []
+
+        // Test case 4: n = 2
+        int n4 = 2;
+        List<String> result4 = solution.generateParenthesis(n4);
+        System.out.println("Test case 4: " + result4); // Expected: ["(())","()()"]
+    }
 }
 
 /*

@@ -47,6 +47,35 @@ public class MinStack {
     public int getMin() {
         return minStack.peek();
     }
+
+    public static void main(String[] args) {
+        MinStack minStack = new MinStack();
+
+        // Test case 1: Push and getMin
+        minStack.push(-2);
+        minStack.push(0);
+        minStack.push(-3);
+        System.out.println("Test case 1 - getMin: " + minStack.getMin()); // Expected: -3
+
+        // Test case 2: Pop and top
+        minStack.pop();
+        System.out.println("Test case 2 - top: " + minStack.top()); // Expected: 0
+
+        // Test case 3: getMin after pop
+        System.out.println("Test case 3 - getMin: " + minStack.getMin()); // Expected: -2
+
+        // Test case 4: Push same value
+        minStack.push(-2);
+        minStack.push(-2);
+        System.out.println("Test case 4 - getMin: " + minStack.getMin()); // Expected: -2
+
+        // Test case 5: Pop all elements
+        minStack.pop();
+        minStack.pop();
+        minStack.pop();
+        minStack.pop();
+        System.out.println("Test case 5 - Stack should be empty");
+    }
 }
 
 /*

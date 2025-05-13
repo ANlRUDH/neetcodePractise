@@ -27,6 +27,30 @@ public class FindMinimumInRotatedSortedArray {
         }
         return nums[left];
     }
+
+    public static void main(String[] args) {
+        FindMinimumInRotatedSortedArray solution = new FindMinimumInRotatedSortedArray();
+        
+        // Test case 1: Basic rotation
+        int[] nums1 = {3, 4, 5, 1, 2};
+        System.out.println("Test case 1: " + solution.findMin(nums1)); // Expected: 1
+        
+        // Test case 2: Multiple rotations
+        int[] nums2 = {4, 5, 6, 7, 0, 1, 2};
+        System.out.println("Test case 2: " + solution.findMin(nums2)); // Expected: 0
+        
+        // Test case 3: No rotation
+        int[] nums3 = {11, 13, 15, 17};
+        System.out.println("Test case 3: " + solution.findMin(nums3)); // Expected: 11
+        
+        // Test case 4: Single element
+        int[] nums4 = {1};
+        System.out.println("Test case 4: " + solution.findMin(nums4)); // Expected: 1
+        
+        // Test case 5: Two elements
+        int[] nums5 = {2, 1};
+        System.out.println("Test case 5: " + solution.findMin(nums5)); // Expected: 1
+    }
 }
 
 /*

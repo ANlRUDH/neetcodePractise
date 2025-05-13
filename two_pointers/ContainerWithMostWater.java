@@ -27,6 +27,34 @@ public class ContainerWithMostWater {
         }
         return max;
     }
+
+    public static void main(String[] args) {
+        ContainerWithMostWater solution = new ContainerWithMostWater();
+        
+        // Test case 1: Basic case with multiple heights
+        int[] height1 = {1, 8, 6, 2, 5, 4, 8, 3, 7};
+        System.out.println("Test case 1: " + solution.maxArea(height1)); // Expected: 49
+        
+        // Test case 2: Two equal heights
+        int[] height2 = {1, 1};
+        System.out.println("Test case 2: " + solution.maxArea(height2)); // Expected: 1
+        
+        // Test case 3: Increasing heights
+        int[] height3 = {1, 2, 3, 4, 5};
+        System.out.println("Test case 3: " + solution.maxArea(height3)); // Expected: 6
+        
+        // Test case 4: Decreasing heights
+        int[] height4 = {5, 4, 3, 2, 1};
+        System.out.println("Test case 4: " + solution.maxArea(height4)); // Expected: 6
+        
+        // Test case 5: Alternating heights
+        int[] height5 = {4, 3, 2, 1, 4};
+        System.out.println("Test case 5: " + solution.maxArea(height5)); // Expected: 16
+        
+        // Test case 6: Single height
+        int[] height6 = {1};
+        System.out.println("Test case 6: " + solution.maxArea(height6)); // Expected: 0
+    }
 }
 
 /*

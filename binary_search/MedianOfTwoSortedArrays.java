@@ -38,6 +38,35 @@ public class MedianOfTwoSortedArrays {
         }
         throw new IllegalArgumentException();
     }
+
+    public static void main(String[] args) {
+        MedianOfTwoSortedArrays solution = new MedianOfTwoSortedArrays();
+        
+        // Test case 1: Basic case
+        int[] nums1_1 = {1, 3};
+        int[] nums2_1 = {2};
+        System.out.println("Test case 1: " + solution.findMedianSortedArrays(nums1_1, nums2_1)); // Expected: 2.0
+        
+        // Test case 2: Even total length
+        int[] nums1_2 = {1, 2};
+        int[] nums2_2 = {3, 4};
+        System.out.println("Test case 2: " + solution.findMedianSortedArrays(nums1_2, nums2_2)); // Expected: 2.5
+        
+        // Test case 3: Empty first array
+        int[] nums1_3 = {};
+        int[] nums2_3 = {1, 2, 3};
+        System.out.println("Test case 3: " + solution.findMedianSortedArrays(nums1_3, nums2_3)); // Expected: 2.0
+        
+        // Test case 4: Empty second array
+        int[] nums1_4 = {1, 2, 3};
+        int[] nums2_4 = {};
+        System.out.println("Test case 4: " + solution.findMedianSortedArrays(nums1_4, nums2_4)); // Expected: 2.0
+        
+        // Test case 5: Different length arrays
+        int[] nums1_5 = {1, 2, 3, 4, 5};
+        int[] nums2_5 = {6, 7, 8};
+        System.out.println("Test case 5: " + solution.findMedianSortedArrays(nums1_5, nums2_5)); // Expected: 4.5
+    }
 }
 
 /*

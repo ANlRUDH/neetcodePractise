@@ -29,6 +29,22 @@ public class ContainsDuplicate {
         }
         return false;
     }
+
+    public static void main(String[] args) {
+        ContainsDuplicate solution = new ContainsDuplicate();
+        
+        // Test case 1: Array with duplicate
+        int[] nums1 = {1, 2, 3, 1};
+        System.out.println("Test case 1: " + solution.containsDuplicate(nums1)); // Expected: true
+        
+        // Test case 2: Array without duplicate
+        int[] nums2 = {1, 2, 3, 4};
+        System.out.println("Test case 2: " + solution.containsDuplicate(nums2)); // Expected: false
+        
+        // Test case 3: Array with multiple duplicates
+        int[] nums3 = {1, 1, 1, 3, 3, 4, 3, 2, 4, 2};
+        System.out.println("Test case 3: " + solution.containsDuplicate(nums3)); // Expected: true
+    }
 }
 
 /*

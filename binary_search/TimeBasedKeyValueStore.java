@@ -47,6 +47,34 @@ public class TimeBasedKeyValueStore {
             this.value = value;
         }
     }
+
+    public static void main(String[] args) {
+        TimeBasedKeyValueStore timeMap = new TimeBasedKeyValueStore();
+        
+        // Test case 1: Basic operations
+        timeMap.set("foo", "bar", 1);
+        System.out.println("Test case 1.1: " + timeMap.get("foo", 1)); // Expected: "bar"
+        System.out.println("Test case 1.2: " + timeMap.get("foo", 3)); // Expected: "bar"
+        
+        // Test case 2: Multiple values for same key
+        timeMap.set("foo", "bar2", 4);
+        System.out.println("Test case 2.1: " + timeMap.get("foo", 4)); // Expected: "bar2"
+        System.out.println("Test case 2.2: " + timeMap.get("foo", 5)); // Expected: "bar2"
+        
+        // Test case 3: Non-existent key
+        System.out.println("Test case 3: " + timeMap.get("nonexistent", 1)); // Expected: ""
+        
+        // Test case 4: Multiple keys
+        timeMap.set("key1", "value1", 1);
+        timeMap.set("key1", "value2", 2);
+        timeMap.set("key2", "value3", 1);
+        System.out.println("Test case 4.1: " + timeMap.get("key1", 1)); // Expected: "value1"
+        System.out.println("Test case 4.2: " + timeMap.get("key1", 2)); // Expected: "value2"
+        System.out.println("Test case 4.3: " + timeMap.get("key2", 1)); // Expected: "value3"
+        
+        // Test case 5: Timestamp before any value
+        System.out.println("Test case 5: " + timeMap.get("foo", 0)); // Expected: ""
+    }
 }
 
 /*

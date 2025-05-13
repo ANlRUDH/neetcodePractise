@@ -30,6 +30,34 @@ public class LargestRectangleInHistogram {
         }
         return maxArea;
     }
+
+    public static void main(String[] args) {
+        LargestRectangleInHistogram solution = new LargestRectangleInHistogram();
+
+        // Test case 1: Example from problem
+        int[] heights1 = {2,1,5,6,2,3};
+        System.out.println("Test case 1: " + solution.largestRectangleArea(heights1)); // Expected: 10
+
+        // Test case 2: Two bars
+        int[] heights2 = {2,4};
+        System.out.println("Test case 2: " + solution.largestRectangleArea(heights2)); // Expected: 4
+
+        // Test case 3: All bars same height
+        int[] heights3 = {3,3,3,3};
+        System.out.println("Test case 3: " + solution.largestRectangleArea(heights3)); // Expected: 12
+
+        // Test case 4: Decreasing heights
+        int[] heights4 = {5,4,3,2,1};
+        System.out.println("Test case 4: " + solution.largestRectangleArea(heights4)); // Expected: 9
+
+        // Test case 5: Single bar
+        int[] heights5 = {7};
+        System.out.println("Test case 5: " + solution.largestRectangleArea(heights5)); // Expected: 7
+
+        // Test case 6: Empty array
+        int[] heights6 = {};
+        System.out.println("Test case 6: " + solution.largestRectangleArea(heights6)); // Expected: 0
+    }
 }
 
 /*

@@ -33,6 +33,30 @@ public class MergeIntervals {
         result.add(current);
         return result.toArray(new int[result.size()][]);
     }
+
+    public static void main(String[] args) {
+        MergeIntervals solution = new MergeIntervals();
+        
+        // Test case 1: Basic overlapping intervals
+        int[][] intervals1 = {{1, 3}, {2, 6}, {8, 10}, {15, 18}};
+        System.out.println("Test case 1: " + Arrays.deepToString(solution.merge(intervals1))); // Expected: [[1,6],[8,10],[15,18]]
+        
+        // Test case 2: Adjacent intervals
+        int[][] intervals2 = {{1, 4}, {4, 5}};
+        System.out.println("Test case 2: " + Arrays.deepToString(solution.merge(intervals2))); // Expected: [[1,5]]
+        
+        // Test case 3: Single interval
+        int[][] intervals3 = {{1, 2}};
+        System.out.println("Test case 3: " + Arrays.deepToString(solution.merge(intervals3))); // Expected: [[1,2]]
+        
+        // Test case 4: Empty array
+        int[][] intervals4 = {};
+        System.out.println("Test case 4: " + Arrays.deepToString(solution.merge(intervals4))); // Expected: []
+        
+        // Test case 5: All intervals overlap
+        int[][] intervals5 = {{1, 4}, {2, 5}, {3, 6}};
+        System.out.println("Test case 5: " + Arrays.deepToString(solution.merge(intervals5))); // Expected: [[1,6]]
+    }
 }
 
 /*

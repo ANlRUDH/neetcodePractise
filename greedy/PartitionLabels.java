@@ -32,6 +32,30 @@ public class PartitionLabels {
         }
         return res;
     }
+
+    public static void main(String[] args) {
+        PartitionLabels solution = new PartitionLabels();
+        
+        // Test case 1: Multiple partitions
+        String s1 = "ababcbacadefegdehijhklij";
+        System.out.println("Test case 1: " + solution.partitionLabels(s1)); // Expected: [9, 7, 8]
+        
+        // Test case 2: Single partition
+        String s2 = "eccbbbbdec";
+        System.out.println("Test case 2: " + solution.partitionLabels(s2)); // Expected: [10]
+        
+        // Test case 3: Each character in its own partition
+        String s3 = "abcdef";
+        System.out.println("Test case 3: " + solution.partitionLabels(s3)); // Expected: [1, 1, 1, 1, 1, 1]
+        
+        // Test case 4: Repeated characters
+        String s4 = "aaaaa";
+        System.out.println("Test case 4: " + solution.partitionLabels(s4)); // Expected: [5]
+        
+        // Test case 5: Empty string
+        String s5 = "";
+        System.out.println("Test case 5: " + solution.partitionLabels(s5)); // Expected: []
+    }
 }
 
 /*

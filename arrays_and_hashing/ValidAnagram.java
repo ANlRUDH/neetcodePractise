@@ -21,6 +21,30 @@ public class ValidAnagram {
         for (int n : count) if (n != 0) return false;
         return true;
     }
+
+    public static void main(String[] args) {
+        ValidAnagram solution = new ValidAnagram();
+        
+        // Test case 1: Valid anagram
+        String s1 = "anagram";
+        String t1 = "nagaram";
+        System.out.println("Test case 1: " + solution.isAnagram(s1, t1)); // Expected: true
+        
+        // Test case 2: Invalid anagram
+        String s2 = "rat";
+        String t2 = "car";
+        System.out.println("Test case 2: " + solution.isAnagram(s2, t2)); // Expected: false
+        
+        // Test case 3: Empty strings
+        String s3 = "";
+        String t3 = "";
+        System.out.println("Test case 3: " + solution.isAnagram(s3, t3)); // Expected: true
+        
+        // Test case 4: Different lengths
+        String s4 = "hello";
+        String t4 = "world";
+        System.out.println("Test case 4: " + solution.isAnagram(s4, t4)); // Expected: false
+    }
 }
 
 /*

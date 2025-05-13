@@ -27,6 +27,51 @@ public class SearchA2DMatrix {
         }
         return false;
     }
+
+    public static void main(String[] args) {
+        SearchA2DMatrix solution = new SearchA2DMatrix();
+        
+        // Test case 1: Target exists
+        int[][] matrix1 = {
+            {1, 3, 5, 7},
+            {10, 11, 16, 20},
+            {23, 30, 34, 60}
+        };
+        int target1 = 3;
+        System.out.println("Test case 1: " + solution.searchMatrix(matrix1, target1)); // Expected: true
+        
+        // Test case 2: Target doesn't exist
+        int[][] matrix2 = {
+            {1, 3, 5, 7},
+            {10, 11, 16, 20},
+            {23, 30, 34, 60}
+        };
+        int target2 = 13;
+        System.out.println("Test case 2: " + solution.searchMatrix(matrix2, target2)); // Expected: false
+        
+        // Test case 3: Target at first element
+        int[][] matrix3 = {
+            {1, 3, 5, 7},
+            {10, 11, 16, 20},
+            {23, 30, 34, 60}
+        };
+        int target3 = 1;
+        System.out.println("Test case 3: " + solution.searchMatrix(matrix3, target3)); // Expected: true
+        
+        // Test case 4: Target at last element
+        int[][] matrix4 = {
+            {1, 3, 5, 7},
+            {10, 11, 16, 20},
+            {23, 30, 34, 60}
+        };
+        int target4 = 60;
+        System.out.println("Test case 4: " + solution.searchMatrix(matrix4, target4)); // Expected: true
+        
+        // Test case 5: Single element matrix
+        int[][] matrix5 = {{1}};
+        int target5 = 1;
+        System.out.println("Test case 5: " + solution.searchMatrix(matrix5, target5)); // Expected: true
+    }
 }
 
 /*

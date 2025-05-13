@@ -40,6 +40,40 @@ public class CarFleet {
         }
         return fleets;
     }
+
+    public static void main(String[] args) {
+        CarFleet solution = new CarFleet();
+
+        // Test case 1: Example from problem
+        int target1 = 12;
+        int[] position1 = {10,8,0,5,3};
+        int[] speed1 = {2,4,1,1,3};
+        System.out.println("Test case 1: " + solution.carFleet(target1, position1, speed1)); // Expected: 3
+
+        // Test case 2: Single car
+        int target2 = 10;
+        int[] position2 = {3};
+        int[] speed2 = {3};
+        System.out.println("Test case 2: " + solution.carFleet(target2, position2, speed2)); // Expected: 1
+
+        // Test case 3: All cars form one fleet
+        int target3 = 100;
+        int[] position3 = {0,2,4};
+        int[] speed3 = {4,2,1};
+        System.out.println("Test case 3: " + solution.carFleet(target3, position3, speed3)); // Expected: 1
+
+        // Test case 4: No cars
+        int target4 = 50;
+        int[] position4 = {};
+        int[] speed4 = {};
+        System.out.println("Test case 4: " + solution.carFleet(target4, position4, speed4)); // Expected: 0
+
+        // Test case 5: Cars with same position
+        int target5 = 20;
+        int[] position5 = {5,5,5};
+        int[] speed5 = {2,3,4};
+        System.out.println("Test case 5: " + solution.carFleet(target5, position5, speed5)); // Expected: 1
+    }
 }
 
 /*

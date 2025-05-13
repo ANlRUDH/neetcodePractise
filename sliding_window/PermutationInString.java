@@ -39,6 +39,50 @@ public class PermutationInString {
         }
         return matches == 26;
     }
+
+    public static void main(String[] args) {
+        PermutationInString solution = new PermutationInString();
+        
+        // Test case 1: Basic case
+        System.out.println("Test case 1:");
+        String s1_1 = "ab";
+        String s2_1 = "eidbaooo";
+        System.out.println("Input: s1 = \"" + s1_1 + "\", s2 = \"" + s2_1 + "\"");
+        boolean result1 = solution.checkInclusion(s1_1, s2_1);
+        System.out.println("Output: " + result1); // Expected: true
+        
+        // Test case 2: No permutation
+        System.out.println("\nTest case 2:");
+        String s1_2 = "ab";
+        String s2_2 = "eidboaoo";
+        System.out.println("Input: s1 = \"" + s1_2 + "\", s2 = \"" + s2_2 + "\"");
+        boolean result2 = solution.checkInclusion(s1_2, s2_2);
+        System.out.println("Output: " + result2); // Expected: false
+        
+        // Test case 3: Same strings
+        System.out.println("\nTest case 3:");
+        String s1_3 = "abc";
+        String s2_3 = "abc";
+        System.out.println("Input: s1 = \"" + s1_3 + "\", s2 = \"" + s2_3 + "\"");
+        boolean result3 = solution.checkInclusion(s1_3, s2_3);
+        System.out.println("Output: " + result3); // Expected: true
+        
+        // Test case 4: s1 longer than s2
+        System.out.println("\nTest case 4:");
+        String s1_4 = "abcd";
+        String s2_4 = "abc";
+        System.out.println("Input: s1 = \"" + s1_4 + "\", s2 = \"" + s2_4 + "\"");
+        boolean result4 = solution.checkInclusion(s1_4, s2_4);
+        System.out.println("Output: " + result4); // Expected: false
+        
+        // Test case 5: Multiple occurrences
+        System.out.println("\nTest case 5:");
+        String s1_5 = "hello";
+        String s2_5 = "ooolleoooleh";
+        System.out.println("Input: s1 = \"" + s1_5 + "\", s2 = \"" + s2_5 + "\"");
+        boolean result5 = solution.checkInclusion(s1_5, s2_5);
+        System.out.println("Output: " + result5); // Expected: false
+    }
 }
 
 /*

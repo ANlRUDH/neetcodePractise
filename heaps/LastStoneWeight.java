@@ -26,6 +26,30 @@ public class LastStoneWeight {
         }
         return maxHeap.isEmpty() ? 0 : maxHeap.poll();
     }
+
+    public static void main(String[] args) {
+        LastStoneWeight solution = new LastStoneWeight();
+        
+        // Test case 1: Basic case
+        int[] stones1 = {2, 7, 4, 1, 8, 1};
+        System.out.println("Test case 1: " + solution.lastStoneWeight(stones1)); // Expected: 1
+        
+        // Test case 2: Single stone
+        int[] stones2 = {1};
+        System.out.println("Test case 2: " + solution.lastStoneWeight(stones2)); // Expected: 1
+        
+        // Test case 3: All stones equal
+        int[] stones3 = {2, 2, 2, 2};
+        System.out.println("Test case 3: " + solution.lastStoneWeight(stones3)); // Expected: 0
+        
+        // Test case 4: Empty array
+        int[] stones4 = {};
+        System.out.println("Test case 4: " + solution.lastStoneWeight(stones4)); // Expected: 0
+        
+        // Test case 5: Two stones
+        int[] stones5 = {3, 7};
+        System.out.println("Test case 5: " + solution.lastStoneWeight(stones5)); // Expected: 4
+    }
 }
 
 /*

@@ -25,6 +25,30 @@ public class JumpGameII {
         }
         return jumps;
     }
+
+    public static void main(String[] args) {
+        JumpGameII solution = new JumpGameII();
+        
+        // Test case 1: Basic case
+        int[] nums1 = {2, 3, 1, 1, 4};
+        System.out.println("Test case 1: " + solution.jump(nums1)); // Expected: 2
+        
+        // Test case 2: Another basic case
+        int[] nums2 = {2, 3, 0, 1, 4};
+        System.out.println("Test case 2: " + solution.jump(nums2)); // Expected: 2
+        
+        // Test case 3: Single element
+        int[] nums3 = {0};
+        System.out.println("Test case 3: " + solution.jump(nums3)); // Expected: 0
+        
+        // Test case 4: Minimum jumps needed
+        int[] nums4 = {1, 2, 3, 4, 5};
+        System.out.println("Test case 4: " + solution.jump(nums4)); // Expected: 3
+        
+        // Test case 5: Large jumps
+        int[] nums5 = {5, 0, 0, 0, 0};
+        System.out.println("Test case 5: " + solution.jump(nums5)); // Expected: 1
+    }
 }
 
 /*

@@ -34,6 +34,45 @@ public class LongestSubstringWithoutRepeatingCharacters {
         }
         return maxLen;
     }
+
+    public static void main(String[] args) {
+        LongestSubstringWithoutRepeatingCharacters solution = new LongestSubstringWithoutRepeatingCharacters();
+        
+        // Test case 1: Basic case
+        System.out.println("Test case 1:");
+        String s1 = "abcabcbb";
+        System.out.println("Input: s = \"" + s1 + "\"");
+        int result1 = solution.lengthOfLongestSubstring(s1);
+        System.out.println("Output: " + result1); // Expected: 3
+        
+        // Test case 2: All same characters
+        System.out.println("\nTest case 2:");
+        String s2 = "bbbbb";
+        System.out.println("Input: s = \"" + s2 + "\"");
+        int result2 = solution.lengthOfLongestSubstring(s2);
+        System.out.println("Output: " + result2); // Expected: 1
+        
+        // Test case 3: Multiple non-repeating substrings
+        System.out.println("\nTest case 3:");
+        String s3 = "pwwkew";
+        System.out.println("Input: s = \"" + s3 + "\"");
+        int result3 = solution.lengthOfLongestSubstring(s3);
+        System.out.println("Output: " + result3); // Expected: 3
+        
+        // Test case 4: Empty string
+        System.out.println("\nTest case 4:");
+        String s4 = "";
+        System.out.println("Input: s = \"" + s4 + "\"");
+        int result4 = solution.lengthOfLongestSubstring(s4);
+        System.out.println("Output: " + result4); // Expected: 0
+        
+        // Test case 5: Single character
+        System.out.println("\nTest case 5:");
+        String s5 = "a";
+        System.out.println("Input: s = \"" + s5 + "\"");
+        int result5 = solution.lengthOfLongestSubstring(s5);
+        System.out.println("Output: " + result5); // Expected: 1
+    }
 }
 
 /*

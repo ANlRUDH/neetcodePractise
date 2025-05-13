@@ -68,6 +68,97 @@ public class LRUCache {
             this.value = value;
         }
     }
+
+    // Helper method to print cache contents
+    private void printCache() {
+        System.out.print("Cache contents: ");
+        Node curr = head.next;
+        while (curr != tail) {
+            System.out.print("(" + curr.key + "," + curr.value + ") ");
+            curr = curr.next;
+        }
+        System.out.println();
+    }
+
+    public static void main(String[] args) {
+        // Test case 1: Basic operations
+        System.out.println("Test case 1:");
+        LRUCache cache1 = new LRUCache(2);
+        System.out.println("Created cache with capacity 2");
+        cache1.put(1, 1);
+        System.out.println("put(1, 1)");
+        cache1.printCache();
+        cache1.put(2, 2);
+        System.out.println("put(2, 2)");
+        cache1.printCache();
+        System.out.println("get(1) = " + cache1.get(1)); // Expected: 1
+        cache1.put(3, 3);
+        System.out.println("put(3, 3)");
+        cache1.printCache();
+        System.out.println("get(2) = " + cache1.get(2)); // Expected: -1
+        cache1.put(4, 4);
+        System.out.println("put(4, 4)");
+        cache1.printCache();
+        System.out.println("get(1) = " + cache1.get(1)); // Expected: -1
+        System.out.println("get(3) = " + cache1.get(3)); // Expected: 3
+        System.out.println("get(4) = " + cache1.get(4)); // Expected: 4
+        
+        // Test case 2: Update existing key
+        System.out.println("\nTest case 2:");
+        LRUCache cache2 = new LRUCache(2);
+        System.out.println("Created cache with capacity 2");
+        cache2.put(1, 1);
+        System.out.println("put(1, 1)");
+        cache2.printCache();
+        cache2.put(1, 2);
+        System.out.println("put(1, 2)");
+        cache2.printCache();
+        System.out.println("get(1) = " + cache2.get(1)); // Expected: 2
+        
+        // Test case 3: Single capacity
+        System.out.println("\nTest case 3:");
+        LRUCache cache3 = new LRUCache(1);
+        System.out.println("Created cache with capacity 1");
+        cache3.put(1, 1);
+        System.out.println("put(1, 1)");
+        cache3.printCache();
+        cache3.put(2, 2);
+        System.out.println("put(2, 2)");
+        cache3.printCache();
+        System.out.println("get(1) = " + cache3.get(1)); // Expected: -1
+        System.out.println("get(2) = " + cache3.get(2)); // Expected: 2
+        
+        // Test case 4: Multiple gets
+        System.out.println("\nTest case 4:");
+        LRUCache cache4 = new LRUCache(3);
+        System.out.println("Created cache with capacity 3");
+        cache4.put(1, 1);
+        cache4.put(2, 2);
+        cache4.put(3, 3);
+        System.out.println("Added three items");
+        cache4.printCache();
+        System.out.println("get(2) = " + cache4.get(2)); // Expected: 2
+        cache4.printCache();
+        cache4.put(4, 4);
+        System.out.println("put(4, 4)");
+        cache4.printCache();
+        System.out.println("get(1) = " + cache4.get(1)); // Expected: -1
+        
+        // Test case 5: Large capacity
+        System.out.println("\nTest case 5:");
+        LRUCache cache5 = new LRUCache(5);
+        System.out.println("Created cache with capacity 5");
+        for (int i = 1; i <= 5; i++) {
+            cache5.put(i, i * 10);
+            System.out.println("put(" + i + ", " + (i * 10) + ")");
+        }
+        cache5.printCache();
+        System.out.println("get(3) = " + cache5.get(3)); // Expected: 30
+        cache5.put(6, 60);
+        System.out.println("put(6, 60)");
+        cache5.printCache();
+        System.out.println("get(1) = " + cache5.get(1)); // Expected: -1
+    }
 }
 
 /*

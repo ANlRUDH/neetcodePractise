@@ -34,6 +34,30 @@ public class LongestConsecutiveSequence {
         }
         return longest;
     }
+
+    public static void main(String[] args) {
+        LongestConsecutiveSequence solution = new LongestConsecutiveSequence();
+        
+        // Test case 1: Basic case with one sequence
+        int[] nums1 = {100, 4, 200, 1, 3, 2};
+        System.out.println("Test case 1: " + solution.longestConsecutive(nums1)); // Expected: 4
+        
+        // Test case 2: Longer sequence
+        int[] nums2 = {0, 3, 7, 2, 5, 8, 4, 6, 0, 1};
+        System.out.println("Test case 2: " + solution.longestConsecutive(nums2)); // Expected: 9
+        
+        // Test case 3: Empty array
+        int[] nums3 = {};
+        System.out.println("Test case 3: " + solution.longestConsecutive(nums3)); // Expected: 0
+        
+        // Test case 4: Single element
+        int[] nums4 = {1};
+        System.out.println("Test case 4: " + solution.longestConsecutive(nums4)); // Expected: 1
+        
+        // Test case 5: Multiple sequences
+        int[] nums5 = {1, 2, 3, 5, 6, 7, 9, 10, 11};
+        System.out.println("Test case 5: " + solution.longestConsecutive(nums5)); // Expected: 3
+    }
 }
 
 /*

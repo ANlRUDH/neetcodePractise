@@ -33,6 +33,35 @@ public class KokoEatingBananas {
         }
         return left;
     }
+
+    public static void main(String[] args) {
+        KokoEatingBananas solution = new KokoEatingBananas();
+        
+        // Test case 1: Basic case
+        int[] piles1 = {3, 6, 7, 11};
+        int h1 = 8;
+        System.out.println("Test case 1: " + solution.minEatingSpeed(piles1, h1)); // Expected: 4
+        
+        // Test case 2: Larger piles
+        int[] piles2 = {30, 11, 23, 4, 20};
+        int h2 = 5;
+        System.out.println("Test case 2: " + solution.minEatingSpeed(piles2, h2)); // Expected: 30
+        
+        // Test case 3: More hours available
+        int[] piles3 = {30, 11, 23, 4, 20};
+        int h3 = 6;
+        System.out.println("Test case 3: " + solution.minEatingSpeed(piles3, h3)); // Expected: 23
+        
+        // Test case 4: Single pile
+        int[] piles4 = {10};
+        int h4 = 2;
+        System.out.println("Test case 4: " + solution.minEatingSpeed(piles4, h4)); // Expected: 5
+        
+        // Test case 5: Equal piles
+        int[] piles5 = {5, 5, 5, 5};
+        int h5 = 4;
+        System.out.println("Test case 5: " + solution.minEatingSpeed(piles5, h5)); // Expected: 5
+    }
 }
 
 /*

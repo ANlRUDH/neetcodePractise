@@ -33,6 +33,35 @@ public class HandOfStraights {
         }
         return true;
     }
+
+    public static void main(String[] args) {
+        HandOfStraights solution = new HandOfStraights();
+        
+        // Test case 1: Valid hand
+        int[] hand1 = {1, 2, 3, 6, 2, 3, 4, 7, 8};
+        int groupSize1 = 3;
+        System.out.println("Test case 1: " + solution.isNStraightHand(hand1, groupSize1)); // Expected: true
+        
+        // Test case 2: Invalid hand
+        int[] hand2 = {1, 2, 3, 4, 5};
+        int groupSize2 = 4;
+        System.out.println("Test case 2: " + solution.isNStraightHand(hand2, groupSize2)); // Expected: false
+        
+        // Test case 3: Single group
+        int[] hand3 = {1, 2, 3};
+        int groupSize3 = 3;
+        System.out.println("Test case 3: " + solution.isNStraightHand(hand3, groupSize3)); // Expected: true
+        
+        // Test case 4: Group size 1
+        int[] hand4 = {1, 2, 3, 4};
+        int groupSize4 = 1;
+        System.out.println("Test case 4: " + solution.isNStraightHand(hand4, groupSize4)); // Expected: true
+        
+        // Test case 5: Non-consecutive cards
+        int[] hand5 = {1, 2, 3, 5, 6, 7};
+        int groupSize5 = 3;
+        System.out.println("Test case 5: " + solution.isNStraightHand(hand5, groupSize5)); // Expected: false
+    }
 }
 
 /*

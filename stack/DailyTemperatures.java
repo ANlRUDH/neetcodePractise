@@ -32,6 +32,40 @@ public class DailyTemperatures {
         }
         return answer;
     }
+
+    public static void main(String[] args) {
+        DailyTemperatures solution = new DailyTemperatures();
+
+        // Test case 1: Example from problem
+        int[] temperatures1 = {73,74,75,71,69,72,76,73};
+        int[] result1 = solution.dailyTemperatures(temperatures1);
+        System.out.println("Test case 1: " + java.util.Arrays.toString(result1)); // Expected: [1,1,4,2,1,1,0,0]
+
+        // Test case 2: Increasing temperatures
+        int[] temperatures2 = {30,40,50,60};
+        int[] result2 = solution.dailyTemperatures(temperatures2);
+        System.out.println("Test case 2: " + java.util.Arrays.toString(result2)); // Expected: [1,1,1,0]
+
+        // Test case 3: Decreasing temperatures
+        int[] temperatures3 = {30,60,90};
+        int[] result3 = solution.dailyTemperatures(temperatures3);
+        System.out.println("Test case 3: " + java.util.Arrays.toString(result3)); // Expected: [1,1,0]
+
+        // Test case 4: All same temperature
+        int[] temperatures4 = {50,50,50,50};
+        int[] result4 = solution.dailyTemperatures(temperatures4);
+        System.out.println("Test case 4: " + java.util.Arrays.toString(result4)); // Expected: [0,0,0,0]
+
+        // Test case 5: Single temperature
+        int[] temperatures5 = {70};
+        int[] result5 = solution.dailyTemperatures(temperatures5);
+        System.out.println("Test case 5: " + java.util.Arrays.toString(result5)); // Expected: [0]
+
+        // Test case 6: Empty array
+        int[] temperatures6 = {};
+        int[] result6 = solution.dailyTemperatures(temperatures6);
+        System.out.println("Test case 6: " + java.util.Arrays.toString(result6)); // Expected: []
+    }
 }
 
 /*

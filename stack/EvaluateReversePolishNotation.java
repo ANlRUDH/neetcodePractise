@@ -41,6 +41,30 @@ public class EvaluateReversePolishNotation {
         }
         return stack.pop();
     }
+
+    public static void main(String[] args) {
+        EvaluateReversePolishNotation solution = new EvaluateReversePolishNotation();
+
+        // Test case 1: Example from problem
+        String[] tokens1 = {"2","1","+","3","*"};
+        System.out.println("Test case 1: " + solution.evalRPN(tokens1)); // Expected: 9
+
+        // Test case 2: Division example
+        String[] tokens2 = {"4","13","5","/","+"};
+        System.out.println("Test case 2: " + solution.evalRPN(tokens2)); // Expected: 6
+
+        // Test case 3: Complex expression
+        String[] tokens3 = {"10","6","9","3","+","-11","*","/","*","17","+","5","+"};
+        System.out.println("Test case 3: " + solution.evalRPN(tokens3)); // Expected: 22
+
+        // Test case 4: Single number
+        String[] tokens4 = {"42"};
+        System.out.println("Test case 4: " + solution.evalRPN(tokens4)); // Expected: 42
+
+        // Test case 5: Empty array
+        String[] tokens5 = {};
+        System.out.println("Test case 5: " + solution.evalRPN(tokens5)); // Expected: 0 (or error, depending on implementation)
+    }
 }
 
 /*

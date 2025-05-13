@@ -25,6 +25,35 @@ public class BinarySearch {
         }
         return -1;
     }
+
+    public static void main(String[] args) {
+        BinarySearch solution = new BinarySearch();
+        
+        // Test case 1: Target exists
+        int[] nums1 = {-1, 0, 3, 5, 9, 12};
+        int target1 = 9;
+        System.out.println("Test case 1: " + solution.search(nums1, target1)); // Expected: 4
+        
+        // Test case 2: Target doesn't exist
+        int[] nums2 = {-1, 0, 3, 5, 9, 12};
+        int target2 = 2;
+        System.out.println("Test case 2: " + solution.search(nums2, target2)); // Expected: -1
+        
+        // Test case 3: Target at start
+        int[] nums3 = {1, 2, 3, 4, 5};
+        int target3 = 1;
+        System.out.println("Test case 3: " + solution.search(nums3, target3)); // Expected: 0
+        
+        // Test case 4: Target at end
+        int[] nums4 = {1, 2, 3, 4, 5};
+        int target4 = 5;
+        System.out.println("Test case 4: " + solution.search(nums4, target4)); // Expected: 4
+        
+        // Test case 5: Empty array
+        int[] nums5 = {};
+        int target5 = 1;
+        System.out.println("Test case 5: " + solution.search(nums5, target5)); // Expected: -1
+    }
 }
 
 /*

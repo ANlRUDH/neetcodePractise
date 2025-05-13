@@ -39,6 +39,38 @@ public class ValidParentheses {
         }
         return stack.isEmpty();
     }
+
+    public static void main(String[] args) {
+        ValidParentheses solution = new ValidParentheses();
+
+        // Test case 1: Simple valid
+        String s1 = "()";
+        System.out.println("Test case 1: " + solution.isValid(s1)); // Expected: true
+
+        // Test case 2: Multiple valid types
+        String s2 = "()[]{}";
+        System.out.println("Test case 2: " + solution.isValid(s2)); // Expected: true
+
+        // Test case 3: Invalid mixed
+        String s3 = "(]";
+        System.out.println("Test case 3: " + solution.isValid(s3)); // Expected: false
+
+        // Test case 4: Nested valid
+        String s4 = "{[()]}";
+        System.out.println("Test case 4: " + solution.isValid(s4)); // Expected: true
+
+        // Test case 5: Unmatched open
+        String s5 = "((";
+        System.out.println("Test case 5: " + solution.isValid(s5)); // Expected: false
+
+        // Test case 6: Unmatched close
+        String s6 = ")}";
+        System.out.println("Test case 6: " + solution.isValid(s6)); // Expected: false
+
+        // Test case 7: Empty string
+        String s7 = "";
+        System.out.println("Test case 7: " + solution.isValid(s7)); // Expected: true
+    }
 }
 
 /*

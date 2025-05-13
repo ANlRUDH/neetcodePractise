@@ -23,6 +23,30 @@ public class JumpGame {
         }
         return true;
     }
+
+    public static void main(String[] args) {
+        JumpGame solution = new JumpGame();
+        
+        // Test case 1: Can reach the end
+        int[] nums1 = {2, 3, 1, 1, 4};
+        System.out.println("Test case 1: " + solution.canJump(nums1)); // Expected: true
+        
+        // Test case 2: Cannot reach the end
+        int[] nums2 = {3, 2, 1, 0, 4};
+        System.out.println("Test case 2: " + solution.canJump(nums2)); // Expected: false
+        
+        // Test case 3: Single element
+        int[] nums3 = {0};
+        System.out.println("Test case 3: " + solution.canJump(nums3)); // Expected: true
+        
+        // Test case 4: All zeros except last
+        int[] nums4 = {0, 0, 0, 1};
+        System.out.println("Test case 4: " + solution.canJump(nums4)); // Expected: false
+        
+        // Test case 5: Large jumps
+        int[] nums5 = {5, 0, 0, 0, 0};
+        System.out.println("Test case 5: " + solution.canJump(nums5)); // Expected: true
+    }
 }
 
 /*

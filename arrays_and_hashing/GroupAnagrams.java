@@ -29,6 +29,42 @@ public class GroupAnagrams {
         }
         return new ArrayList<>(map.values());
     }
+
+    public static void main(String[] args) {
+        GroupAnagrams solution = new GroupAnagrams();
+        
+        // Test case 1: Multiple groups of anagrams
+        String[] strs1 = {"eat", "tea", "tan", "ate", "nat", "bat"};
+        List<List<String>> result1 = solution.groupAnagrams(strs1);
+        System.out.println("Test case 1:");
+        for (List<String> group : result1) {
+            System.out.println(group);
+        }
+        
+        // Test case 2: Empty string
+        String[] strs2 = {""};
+        List<List<String>> result2 = solution.groupAnagrams(strs2);
+        System.out.println("\nTest case 2:");
+        for (List<String> group : result2) {
+            System.out.println(group);
+        }
+        
+        // Test case 3: Single character
+        String[] strs3 = {"a"};
+        List<List<String>> result3 = solution.groupAnagrams(strs3);
+        System.out.println("\nTest case 3:");
+        for (List<String> group : result3) {
+            System.out.println(group);
+        }
+        
+        // Test case 4: No anagrams
+        String[] strs4 = {"abc", "def", "ghi"};
+        List<List<String>> result4 = solution.groupAnagrams(strs4);
+        System.out.println("\nTest case 4:");
+        for (List<String> group : result4) {
+            System.out.println(group);
+        }
+    }
 }
 
 /*

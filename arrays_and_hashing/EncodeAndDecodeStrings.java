@@ -37,6 +37,46 @@ public class EncodeAndDecodeStrings {
         }
         return res;
     }
+
+    public static void main(String[] args) {
+        EncodeAndDecodeStrings solution = new EncodeAndDecodeStrings();
+        
+        // Test case 1: Basic case
+        List<String> strs1 = Arrays.asList("lint", "code", "love", "you");
+        String encoded1 = solution.encode(strs1);
+        List<String> decoded1 = solution.decode(encoded1);
+        System.out.println("Test case 1:");
+        System.out.println("Original: " + strs1);
+        System.out.println("Encoded: " + encoded1);
+        System.out.println("Decoded: " + decoded1);
+        
+        // Test case 2: Strings with special characters
+        List<String> strs2 = Arrays.asList("we", "say", ":", "yes");
+        String encoded2 = solution.encode(strs2);
+        List<String> decoded2 = solution.decode(encoded2);
+        System.out.println("\nTest case 2:");
+        System.out.println("Original: " + strs2);
+        System.out.println("Encoded: " + encoded2);
+        System.out.println("Decoded: " + decoded2);
+        
+        // Test case 3: Empty strings
+        List<String> strs3 = Arrays.asList("", "", "");
+        String encoded3 = solution.encode(strs3);
+        List<String> decoded3 = solution.decode(encoded3);
+        System.out.println("\nTest case 3:");
+        System.out.println("Original: " + strs3);
+        System.out.println("Encoded: " + encoded3);
+        System.out.println("Decoded: " + decoded3);
+        
+        // Test case 4: Single string
+        List<String> strs4 = Arrays.asList("hello");
+        String encoded4 = solution.encode(strs4);
+        List<String> decoded4 = solution.decode(encoded4);
+        System.out.println("\nTest case 4:");
+        System.out.println("Original: " + strs4);
+        System.out.println("Encoded: " + encoded4);
+        System.out.println("Decoded: " + decoded4);
+    }
 }
 
 /*

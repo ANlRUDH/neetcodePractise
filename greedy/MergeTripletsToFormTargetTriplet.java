@@ -27,6 +27,35 @@ public class MergeTripletsToFormTargetTriplet {
         }
         return found[0] && found[1] && found[2];
     }
+
+    public static void main(String[] args) {
+        MergeTripletsToFormTargetTriplet solution = new MergeTripletsToFormTargetTriplet();
+        
+        // Test case 1: Valid triplets
+        int[][] triplets1 = {{2, 5, 3}, {1, 8, 4}, {1, 7, 5}};
+        int[] target1 = {2, 7, 5};
+        System.out.println("Test case 1: " + solution.mergeTriplets(triplets1, target1)); // Expected: true
+        
+        // Test case 2: Invalid triplets
+        int[][] triplets2 = {{3, 4, 5}, {4, 5, 6}};
+        int[] target2 = {3, 2, 5};
+        System.out.println("Test case 2: " + solution.mergeTriplets(triplets2, target2)); // Expected: false
+        
+        // Test case 3: All equal target
+        int[][] triplets3 = {{2, 5, 3}, {2, 3, 4}, {1, 2, 5}, {5, 2, 3}};
+        int[] target3 = {5, 5, 5};
+        System.out.println("Test case 3: " + solution.mergeTriplets(triplets3, target3)); // Expected: true
+        
+        // Test case 4: Single triplet
+        int[][] triplets4 = {{1, 1, 1}};
+        int[] target4 = {1, 1, 1};
+        System.out.println("Test case 4: " + solution.mergeTriplets(triplets4, target4)); // Expected: true
+        
+        // Test case 5: No matching values
+        int[][] triplets5 = {{1, 1, 1}, {2, 2, 2}};
+        int[] target5 = {3, 3, 3};
+        System.out.println("Test case 5: " + solution.mergeTriplets(triplets5, target5)); // Expected: false
+    }
 }
 
 /*

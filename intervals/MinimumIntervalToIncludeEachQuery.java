@@ -38,6 +38,35 @@ public class MinimumIntervalToIncludeEachQuery {
         }
         return res;
     }
+
+    public static void main(String[] args) {
+        MinimumIntervalToIncludeEachQuery solution = new MinimumIntervalToIncludeEachQuery();
+        
+        // Test case 1: Basic case
+        int[][] intervals1 = {{1, 4}, {2, 4}, {3, 6}, {4, 4}};
+        int[] queries1 = {2, 3, 4, 5};
+        System.out.println("Test case 1: " + Arrays.toString(solution.minInterval(intervals1, queries1))); // Expected: [3, 3, 1, 4]
+        
+        // Test case 2: No interval for some queries
+        int[][] intervals2 = {{2, 3}, {2, 5}, {1, 8}, {20, 25}};
+        int[] queries2 = {2, 19, 5, 22};
+        System.out.println("Test case 2: " + Arrays.toString(solution.minInterval(intervals2, queries2))); // Expected: [2, -1, 4, 6]
+        
+        // Test case 3: Single interval
+        int[][] intervals3 = {{1, 2}};
+        int[] queries3 = {1, 2, 3};
+        System.out.println("Test case 3: " + Arrays.toString(solution.minInterval(intervals3, queries3))); // Expected: [2, 2, -1]
+        
+        // Test case 4: Empty intervals
+        int[][] intervals4 = {};
+        int[] queries4 = {1, 2, 3};
+        System.out.println("Test case 4: " + Arrays.toString(solution.minInterval(intervals4, queries4))); // Expected: [-1, -1, -1]
+        
+        // Test case 5: Overlapping intervals
+        int[][] intervals5 = {{1, 3}, {2, 4}, {3, 5}};
+        int[] queries5 = {2, 3, 4};
+        System.out.println("Test case 5: " + Arrays.toString(solution.minInterval(intervals5, queries5))); // Expected: [2, 2, 2]
+    }
 }
 
 /*

@@ -35,6 +35,30 @@ public class ValidParenthesisString {
         }
         return low == 0;
     }
+
+    public static void main(String[] args) {
+        ValidParenthesisString solution = new ValidParenthesisString();
+        
+        // Test case 1: Basic valid case
+        String s1 = "()";
+        System.out.println("Test case 1: " + solution.checkValidString(s1)); // Expected: true
+        
+        // Test case 2: With wildcard
+        String s2 = "(*)";
+        System.out.println("Test case 2: " + solution.checkValidString(s2)); // Expected: true
+        
+        // Test case 3: Multiple wildcards
+        String s3 = "(*))";
+        System.out.println("Test case 3: " + solution.checkValidString(s3)); // Expected: true
+        
+        // Test case 4: Invalid case
+        String s4 = "((*";
+        System.out.println("Test case 4: " + solution.checkValidString(s4)); // Expected: false
+        
+        // Test case 5: Complex valid case
+        String s5 = "((*)";
+        System.out.println("Test case 5: " + solution.checkValidString(s5)); // Expected: true
+    }
 }
 
 /*

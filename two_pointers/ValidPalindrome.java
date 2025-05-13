@@ -28,6 +28,34 @@ public class ValidPalindrome {
         }
         return true;
     }
+
+    public static void main(String[] args) {
+        ValidPalindrome solution = new ValidPalindrome();
+        
+        // Test case 1: Basic palindrome with spaces and punctuation
+        String s1 = "A man, a plan, a canal: Panama";
+        System.out.println("Test case 1: " + solution.isPalindrome(s1)); // Expected: true
+        
+        // Test case 2: Non-palindrome with spaces
+        String s2 = "race a car";
+        System.out.println("Test case 2: " + solution.isPalindrome(s2)); // Expected: false
+        
+        // Test case 3: Empty string
+        String s3 = "";
+        System.out.println("Test case 3: " + solution.isPalindrome(s3)); // Expected: true
+        
+        // Test case 4: Single character
+        String s4 = "a";
+        System.out.println("Test case 4: " + solution.isPalindrome(s4)); // Expected: true
+        
+        // Test case 5: String with only non-alphanumeric characters
+        String s5 = ".,";
+        System.out.println("Test case 5: " + solution.isPalindrome(s5)); // Expected: true
+        
+        // Test case 6: Mixed case palindrome
+        String s6 = "Was it a car or a cat I saw?";
+        System.out.println("Test case 6: " + solution.isPalindrome(s6)); // Expected: true
+    }
 }
 
 /*

@@ -33,6 +33,30 @@ public class NonOverlappingIntervals {
         }
         return intervals.length - count;
     }
+
+    public static void main(String[] args) {
+        NonOverlappingIntervals solution = new NonOverlappingIntervals();
+        
+        // Test case 1: One interval to remove
+        int[][] intervals1 = {{1, 2}, {2, 3}, {3, 4}, {1, 3}};
+        System.out.println("Test case 1: " + solution.eraseOverlapIntervals(intervals1)); // Expected: 1
+        
+        // Test case 2: Multiple overlapping intervals
+        int[][] intervals2 = {{1, 2}, {1, 2}, {1, 2}};
+        System.out.println("Test case 2: " + solution.eraseOverlapIntervals(intervals2)); // Expected: 2
+        
+        // Test case 3: No overlapping intervals
+        int[][] intervals3 = {{1, 2}, {2, 3}};
+        System.out.println("Test case 3: " + solution.eraseOverlapIntervals(intervals3)); // Expected: 0
+        
+        // Test case 4: Empty array
+        int[][] intervals4 = {};
+        System.out.println("Test case 4: " + solution.eraseOverlapIntervals(intervals4)); // Expected: 0
+        
+        // Test case 5: Complex overlapping
+        int[][] intervals5 = {{1, 4}, {2, 3}, {3, 5}, {4, 6}};
+        System.out.println("Test case 5: " + solution.eraseOverlapIntervals(intervals5)); // Expected: 2
+    }
 }
 
 /*
